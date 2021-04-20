@@ -1,8 +1,9 @@
 :root {
-  --color1: #14A3C5;
-  --backgroundColor: #CCDCDC;
-  --normalColor: #1B2222;
-  --boldColor: #3AD3D3;
+  --color1: rgb(20, 163, 197);
+  --backgroundColor: rgb(204, 220, 220);
+  --normalColor: rgb(27, 34, 34);
+  --boldColor: rgb(58, 211, 211);
+}
 
 * {
   box-sizing: border-box;
@@ -19,25 +20,39 @@
   padding: 15px;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-1 {width: 26%;
+border: 3px solid black;}
+.col-2 {width: 74%;
+}
+.col-3 {width: 100%;
+text-align: center;}
 
 html {
-  font-family: Roboto-Black;;
-  background-color: var(backgroundColor)
+  font-family: Roboto-Black;
+  background-color: var(--backgroundColor);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url("CV/Roboto-Black.ttf");
+}
+.image {
+    width:100%;
+    height:auto;
+}
+
+h2, h3 {
+    color: var(--normalColor)
+}
+
+h1 {
+    color: var(--color1)
 }
 
 .header {
-  background-color: var(color1);
   padding: 15px;
+}
+
+@media only screen and (max-width:1000px) {
+    [class*="col-"] {width:100%;}
 }
