@@ -41,6 +41,18 @@ html {
     height:auto;
 }
 
+textarea{
+    vertical-align: middle;
+}
+
+label {
+    width:240px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    padding: 8px
+}
+
 h2, h3 {
     color: var(--normalColor)
 }
@@ -53,6 +65,102 @@ h1 {
   padding: 15px;
 }
 
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
 @media only screen and (max-width:1000px) {
     [class*="col-"] {width:100%;}
+}
+
+.fa {
+  padding: 20px;
+  font-size: 80px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: 8px 4px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: rgb(59, 89, 152);
+  color: white;
+}
+
+.fa-instagram {
+  background: rgb(255, 85, 0);
+  color: white;
+}
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }

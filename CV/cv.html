@@ -2,32 +2,54 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ido Eitan - Online Resume</title>
+    <script src="cv.js"></script>
+
 </head>
 <body>
-
 <div class="header">
   <div class="col-1">
     <img class="image" src="me.jpeg" alt="MyPicture" width="350" height="350"> <br>
   </div>
     <div class="col-2">
-    <h1><b>Ido Eitan</b></h1><br>
-  <h2>Online CV / Resume</h2><br>
-  <h3>Beer-Sheva------------054-5424564------------idoei@post.bgu.ac.il</h3>
+      <h1><b>Ido Eitan</b></h1><br>
+      <h2>Online CV / Resume</h2><br>
+      <a href="https://www.instagram.com/idoei" class="fa fa-instagram"></a>
+      <a href="https://www.facebook.com/ido.eitan" class="fa fa-facebook"></a>
     </div>
+      <div class="popup" onclick="myFunction()">Click me to show my details
+      <span class="popuptext" id="myPopup">Beer-Sheva<br>054-5424564<br>Idoei@post.bgu.ac.il</span>
+      </div>
 </div>
 
 <div class="row">
   <div class="col-3">
-    <h1>Summary</h1><br>
-    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
-    <h1>Work Experience</h1><br>
-    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
-    <h1>Education</h1><br>
-    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+    <h1>Summary</h1>
+    <p>I'm a hard working industrial engineering student / cook / sushi-man <br>
+       Looking to work and learn from the best to become the best.
+    </p>
+    <h1>Work Experience</h1>
+    <p><b>2011-2012</b> "Sayura" resaurant as a sushi-man. <br>
+      <b>2014-2017</b> military service - Search and Rescue warrior in the Home Front Command.<br>
+      <b>2017-2019</b> "Giggsi - sports bar" as a cook.<br>
+      <b>2019-2020</b> "MegaLock" as an assistant technician.<br>
+    </p>
+    <h1>Contact Me</h1>
+      <form name="ContactUs" method="get" action="_blank" ><br>
+        <label for="fullname2">Enter you full name</label>
+        <input type="text" name="FullName" id="fullname2"><br>
+        <label for="phone">Enter your phone number</label>
+        <input type="tel" id="phone" name="phone"><br>
+        <label for="details">Details</label>
+        <textarea rows="5" cols="20" name="details" id="details"></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
   </div>
 </div>
+
+
 
 </body>
 </html>
