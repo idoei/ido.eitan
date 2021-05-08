@@ -34,7 +34,7 @@ html {
 
 @font-face {
     font-family: Roboto-Black;
-    src: url("CV/Roboto-Black.ttf");
+    src: url("Roboto-Black.ttf");
 }
 .image {
     width:100%;
@@ -164,3 +164,28 @@ h1 {
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+#contact {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#contact:hover, #contact:active {
+  background-color: red;
+}
+
+#back {
+  font-size: 16px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+#back:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
