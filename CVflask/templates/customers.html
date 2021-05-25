@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'cv.css') }}">
+    <link rel="stylesheet" href="{{ url_for('uniquestyle') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+{% extends 'contactList.html' %}
+
+{% block main_content %}
+<ul>
+    <li>Customer1</li>
+    <li>Customer2</li>
+    <li>Customer3</li>
+</ul>
+{% endblock %}
+
+</body>
+</html>

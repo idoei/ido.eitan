@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'cv.css') }}">
+    <link rel="stylesheet" href="{{ url_for('uniquestyle') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <h1>Welcome to my Assignment 8 page, {{ curr_user.firstname | default('Stranger', true) | upper }} {{ curr_user.lastname | lower}}!</h1>
+    {% include ('header.html') %}
+
+    {% if curr_user.firstname == 'Ido' %}
+        <h1> Hello {{ curr_user.firstname | upper }} {{ curr_user.lastname | lower}}!</h1>
+    {% else %}
+        <h1> Hello Stranger!</h1>
+    {% endif %}
+
+    <h1>My Hobbies:</h1>
+    <ul>
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+        {% endfor %}
+    </ul>
+
+    <a id="ass8" href="{{ url_for('customerslink') }}">Click for block</a>
+
+</body>
+</html>

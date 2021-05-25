@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="header">
+    <div class="col-1">
+        <img class="image" src="{{ url_for('static', filename = 'me.jpeg') }}" alt="MyPicture" width="350" height="350"> <br>
+    </div>
+    <div class="col-2">
+        <h1><b>Ido Eitan</b></h1><br>
+        <h2>Online CV / Resume</h2><br>
+        <a href="{{ url_for('intagramlink') }}" class="fa fa-instagram"></a>
+        <a href="{{ url_for('facebooklink') }}" class="fa fa-facebook"></a>
+        <a id="contact" href="{{ url_for('showcontacts') }}">Click for contact list</a>
+        <a id="ass8" href="{{ url_for('ass8') }}">Click for Assignment8</a>
+    </div>
+    <div class="popup" onclick="myFunction()">Click me to show my details
+        <span class="popuptext" id="myPopup">Beer-Sheva<br>054-5424564<br>Idoei@post.bgu.ac.il</span>
+    </div>
+</div>
+
+</body>
+</html>
