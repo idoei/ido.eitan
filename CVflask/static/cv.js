@@ -26,6 +26,7 @@ function createUsersList(users) {
     }
 }
 
+
 function goBack() {
   window.history.back();
 }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    {% include ('welcome.html') %}
+
 </head>
 <body>
 
@@ -17,6 +19,8 @@
         <a href="{{ url_for('facebooklink') }}" class="fa fa-facebook"></a>
         <a id="contact" href="{{ url_for('showcontacts') }}">Click for contact list</a>
         <a id="ass8" href="{{ url_for('ass8') }}">Click for Assignment8</a>
+        <a id="ass9" href="{{ url_for('ass9') }}">Click for Assignment9</a>
+
     </div>
     <div class="popup" onclick="myFunction()">Click me to show my details
         <span class="popuptext" id="myPopup">Beer-Sheva<br>054-5424564<br>Idoei@post.bgu.ac.il</span>
