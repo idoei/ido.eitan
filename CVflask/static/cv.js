@@ -3,6 +3,10 @@ function myFunction() {
   popup.classList.toggle("show");
 }
 
+function popMessage() {
+    confirm("Database Updated!");
+}
+
 fetch('https://reqres.in/api/users?page=2').then(
     response => response.json()
 ).then(

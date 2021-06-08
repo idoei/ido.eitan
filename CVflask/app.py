@@ -1,7 +1,11 @@
-from flask import Flask, url_for, redirect, render_template, request, session
+from flask import Flask, url_for, redirect, render_template, request, session, jsonify, Blueprint
+import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '3196'
+
+from pages.Assignment10.Assignment10 import Assignment10
+app.register_blueprint(Assignment10)
 
 
 @app.route('/home')
@@ -15,7 +19,7 @@ def index():
 def ass8():
     name = 'Ido'
     title = 'Hobbies'
-    hobbieslist = ['Cooking','Diving','Traveling']
+    hobbieslist = ['Cooking', 'Diving', 'Traveling']
     return render_template('assignment8.html',
                            curr_user={'firstname': name, 'lastname': 'Eitan'},
                            title=title, hobbies=hobbieslist)
@@ -25,7 +29,7 @@ def ass8():
 def ass9():
     name = 'Ido'
     title = 'Hobbies'
-    hobbieslist = ['Cooking','Diving','Traveling']
+    hobbieslist = ['Cooking', 'Diving', 'Traveling']
     return render_template('assignment9.html',
                            curr_user={'firstname': name, 'lastname': 'Eitan'},
                            title=title, hobbies=hobbieslist)
@@ -79,7 +83,8 @@ def searchform():
     ]
     if 'searchinput' in request.args:
         search = request.args['searchinput']
-    else: search = ""
+    else:
+        search = ""
     if search == "":
         return render_template('assignment9.html', search=users)
     flag = False
@@ -98,18 +103,20 @@ def registerform():
         user_pass = request.form['password']
         user_email = request.form['email']
         user_nickname = request.form['nickname']
-    else: user_name, user_pass, user_email, user_nickname= '', '', '', ''
+    else:
+        user_name, user_pass, user_email, user_nickname = '', '', '', ''
     session['username'] = user_name
     session['password'] = user_pass
     session['email'] = user_email
     session['nickname'] = user_nickname
-    return render_template('assignment9.html', user_name=user_name, user_pass=user_pass, user_email=user_email, user_nickname=user_nickname)
+    return render_template('assignment9.html', user_name=user_name, user_pass=user_pass, user_email=user_email,
+                           user_nickname=user_nickname)
 
 
 @app.route('/logout')
 def logout():
     if 'username' in session:
-        session.pop('username',None)
+        session.pop('username', None)
         session.pop('password', None)
         session.pop('email', None)
         session.pop('nickname', None)
