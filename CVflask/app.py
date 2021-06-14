@@ -15,6 +15,58 @@ def index():
     return render_template('cv.html')
 
 
+@app.route('/assignment11/users', methods=['GET'])
+def returnusersjsonify():
+    if request.method == 'GET':
+        query = "select * from users"
+        query_result = interact_db(query=query, query_type='fetch')
+        data = list(map(lambda row: row._asdict(), query_result))
+        data = jsonify(data)
+    return data
+
+
+@app.route('/assignment11/users/selected',defaults = {'SOME_USER_ID':6})
+@app.route('/assignment11/users/selected/<int:SOME_USER_ID>')
+def profile_func(SOME_USER_ID):
+    if SOME_USER_ID == 6:
+        query = "SELECT * FROM users WHERE id=6;"
+        query_result = interact_db(query=query, query_type='fetch')
+        response = query_result[0]
+        response = jsonify(response)
+        return response
+    else:
+        query = "SELECT * FROM users WHERE id='%s';" %SOME_USER_ID
+        query_result = interact_db(query=query,query_type='fetch')
+        response = {}
+        if len(query_result) != 0:
+            response = query_result[0]
+        else :
+            return "This user doesn't exist "
+        response = jsonify(response)
+    return response
+
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='root',
+                                         database='assignment10')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
+
 @app.route('/assignment8')
 def ass8():
     name = 'Ido'
